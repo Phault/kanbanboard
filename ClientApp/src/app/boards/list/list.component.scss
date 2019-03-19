@@ -1,0 +1,50 @@
+:host {
+    background: rgb(223,227,230);
+    border-radius: 3px;
+    color: #17394d;
+    min-width: 272px;
+    box-shadow: 0 1px 0 rgba(9,45,66,.25);
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    flex: 0 0 auto;
+    min-height: 20px;
+    padding: 10px 8px 8px;
+    position: relative;
+}
+
+.list-handle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+} 
+
+.title {
+    width: 100%;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.container {
+    min-height: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 4px;
+    margin: 0 4px;
+    flex: 1 1 auto;
+}
+
+.new-card {
+    border-radius: 3px;
+    min-height: 20px;
+    margin-bottom: 8px;
+    padding: 6px 8px;
+
+    font-size: 14px;
+}

@@ -1,0 +1,10 @@
+<div class="header">
+  <div class="list-handle" (click)="title.activate()" *ngIf="!title.isActive"></div>
+  <app-editable-textbox #title class="title" [value]="list.title" (valueChange)="titleChanged($event)" placeholder="Title"></app-editable-textbox>
+</div>
+
+<div class="container" dragula="CARDS" [(dragulaModel)]="list.cards" [attr.data-list-id]="list.id">
+  <app-card *ngFor="let card of list.cards" [card]="card"></app-card>
+</div>
+
+<app-editable-textbox #newCard class="new-card" (valueChange)="cardSubmitted($event)" placeholder="Create task..."></app-editable-textbox>

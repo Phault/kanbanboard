@@ -1,0 +1,27 @@
+<div class="root">
+  <div class="header">
+    <div class="button-row">
+      <app-editable-textbox [value]="board ? board.title : 'Loading..'" 
+        (valueChange)="titleChanged($event)" 
+        placeholder="Title"></app-editable-textbox>
+      <button mat-button>Private</button>
+      <button mat-button>Member</button>
+    </div>
+  
+    <div class="button-row">
+      <button mat-button>
+        <mat-icon>more_horiz</mat-icon>
+        Show menu
+      </button>
+    </div>
+  </div>
+  
+  <div appDragScroll class="content">
+    <div *ngIf="board" class="dragula-wrapper">
+      <div class="list-container" dragula="CARDLISTS" [(dragulaModel)]="board.lists">
+          <app-list class="container no-drag-scroll" *ngFor="let list of board.lists" [list]="list"></app-list>
+      </div>
+      <app-editable-textbox class="new-list" (valueChange)="newListSubmitted($event)" placeholder="Create list..."></app-editable-textbox>
+    </div>
+  </div>
+</div>

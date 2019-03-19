@@ -1,0 +1,42 @@
+<div class="menubar">
+  <div class="logo">
+    LOGO HERE
+  </div>
+  <div class="button-row">
+    <a
+      mat-icon-button
+      routerLink="/">
+      <mat-icon>home</mat-icon>
+    </a>
+
+    <a
+    mat-button
+      *ngIf="auth.isAuthenticated"
+      routerLink="/dashboard">
+      <mat-icon>dashboard</mat-icon>
+      Boards
+    </a>
+    <div class="search button-row">
+      <input type="text" placeholder="Search" />
+      <mat-icon>search</mat-icon>
+    </div>
+  </div>
+  <div class="button-row">
+    <button mat-icon-button>
+      <mat-icon>add</mat-icon>
+    </button>
+    <a
+      mat-button
+      *ngIf="!auth.isAuthenticated"
+      routerLink="/auth/login">
+      Log In
+    </a>
+
+    <a
+      mat-button
+      *ngIf="auth.isAuthenticated"
+      (click)="auth.logout()">
+      Log Out
+    </a>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<form #f="ngForm" novalidate (ngSubmit)="submit(f)">
+  <input type="text" placeholder="Username" required [(ngModel)]="credentials.username" name="username"/>
+  <input type="password" placeholder="Password" required [(ngModel)]="credentials.password" name="password"/>
+
+  <button type="submit" [disabled]="f.invalid || isRequesting">Login</button>
+</form>

@@ -1,0 +1,6 @@
+<h1>{{profile.username}}'s boards</h1>
+<ul>
+  <li *ngFor="let board of boards">
+    <a [routerLink]="['/boards', board.id]">{{board.title}}</a>
+  </li>
+</ul>

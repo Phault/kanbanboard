@@ -1,0 +1,22 @@
+.root {
+  background: rgb(0, 121, 191);
+  height: 100%;
+  color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+  }
+}
+
+:host {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;  
+}

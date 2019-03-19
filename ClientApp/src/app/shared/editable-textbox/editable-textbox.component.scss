@@ -1,0 +1,49 @@
+:host {
+    position: relative;
+    display: inline-block;
+
+    &.active {
+        .activator {
+            display: none;
+        }
+    }
+}
+
+.activator {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+
+textarea {
+    display: block;
+    padding: 0;
+    margin: 0;
+    background: none;
+    outline: none;
+    resize: none;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+
+    overflow: hidden;
+    overflow-wrap: break-word;
+
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+
+    &:focus {
+        background: white;
+        color: black;
+        border-color: blue;
+    }
+}

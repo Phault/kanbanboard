@@ -1,0 +1,11 @@
+<div class="activator" (click)="activate()"></div>
+<textarea #textbox 
+  tabindex="-1"
+  [rows]="rows"
+  [placeholder]="placeholder" 
+  [ngModel]="isActive ? workingValue : value" 
+  (ngModelChange)="workingValueChanged($event)" 
+  (blur)="submitOnBlur ? submit() : deactivate()" 
+  (keydown.enter)="submit(); $event.stopPropagation()" 
+  (keydown.escape)="deactivate()">
+</textarea>

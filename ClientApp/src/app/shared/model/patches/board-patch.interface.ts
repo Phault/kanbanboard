@@ -1,0 +1,3 @@
+interface BoardPatch {
+    title?: string;
+}

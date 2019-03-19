@@ -1,0 +1,28 @@
+.menubar {
+    width: 100%;
+    height: 32px;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.button-row {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}   
+
+@media (max-width: 767px) {
+    .search input {
+        display: none;
+    }
+}
