@@ -14,8 +14,8 @@ namespace Kanbanboard.Model
 
     public class BoardMember
     {
-        [Key] public string BoardId { get; set; }
-        [Key] public string UserId { get; set; }
+        public string BoardId { get; set; }
+        public string UserId { get; set; }
         [Required] public BoardMemberRole Role { get; set;}
 
         public virtual Board Board { get; set; }
