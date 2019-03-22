@@ -62,23 +62,14 @@ namespace Kanbanboard.Data
 
         public async Task<Board> UpdateBoardAsync(string id, Delta<Board> patch)
         {
-            var board = await _repository.GetBoardAsync(id);
-
             await CheckBoardAccessAsync(id, BoardMemberRole.Admin);
-
-            patch.Patch(board);
-            await _boardContext.SaveChangesAsync();
-            return board;
+            return await _repository.UpdateBoardAsync(id, patch);
         }
 
         public async Task DeleteBoardAsync(string id)
         {
-            var board = await GetBoardAsync(id);
-
             await CheckBoardAccessAsync(id, BoardMemberRole.Admin);
-
-            _boardContext.Boards.Remove(board);
-            await _boardContext.SaveChangesAsync();
+            await _repository.DeleteBoardAsync(id);
         }
 
         public async Task<CardList> GetListAsync(string id)

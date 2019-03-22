@@ -1,26 +1,29 @@
 <div class="menubar">
   <div class="logo">
-    LOGO HERE
+    Kanbanboard
   </div>
+
   <div class="button-row">
     <a
       mat-icon-button
-      routerLink="/">
+      routerLink="/"
+      *ngIf="!auth.isAuthenticated">
       <mat-icon>home</mat-icon>
     </a>
 
     <a
-    mat-button
+      mat-icon-button
       *ngIf="auth.isAuthenticated"
       routerLink="/dashboard">
-      <mat-icon>dashboard</mat-icon>
-      Boards
+      <mat-icon>home</mat-icon>
     </a>
+    
     <div class="search button-row">
       <input type="text" placeholder="Search" />
       <mat-icon>search</mat-icon>
     </div>
   </div>
+
   <div class="button-row">
     <button mat-icon-button>
       <mat-icon>add</mat-icon>

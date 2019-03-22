@@ -3,4 +3,5 @@ interface Board {
     title: string;
     lists: Array<CardList>;
     members: Array<BoardMember>;
+    background: string;
 }

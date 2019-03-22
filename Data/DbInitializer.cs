@@ -33,11 +33,19 @@ namespace Kanbanboard.Data
             var board = new Board
             {
                 Title = "My Todo List",
+                Background = "#0079bf"
+            };
+
+            var boardWithImageBackground = new Board
+            {
+                Title = "Another board",
+                Background = "triangles.svg"
             };
 
             var members = new List<BoardMember> {
                 new BoardMember { Board = board, User = user, Role = BoardMemberRole.Admin },
-                new BoardMember { Board = board, User = otherUser }
+                new BoardMember { Board = board, User = otherUser },
+                new BoardMember { Board = boardWithImageBackground, User = user, Role = BoardMemberRole.Admin },
             };
 
             var lists = new List<CardList> {
@@ -66,6 +74,7 @@ namespace Kanbanboard.Data
             };
 
             await context.Boards.AddAsync(board);
+            await context.Boards.AddAsync(boardWithImageBackground);
             await context.BoardMembers.AddRangeAsync(members);
             await context.Lists.AddRangeAsync(lists);
             await context.Cards.AddRangeAsync(cards);

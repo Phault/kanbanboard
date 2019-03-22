@@ -12,6 +12,8 @@ namespace Kanbanboard.Model
         public string Id { get; set; }
 
         [Required] public string Title { get; set; }
+
+        public string Background { get; set; }
         
         public virtual ICollection<CardList> Lists { get; set; }
         public virtual ICollection<BoardMember> Members { get; set; }

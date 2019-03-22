@@ -1,6 +1,14 @@
-<h1>{{profile.username}}'s boards</h1>
 <ul>
   <li *ngFor="let board of boards">
-    <a [routerLink]="['/boards', board.id]">{{board.title}}</a>
+    <a [routerLink]="['/boards', board.id]">
+      <app-board-thumbnail [board]="board" class="board-tile"></app-board-thumbnail>      
+    </a>
+  </li>
+  <li>
+    <app-board-thumbnail 
+      [board]="{title: 'Create new board...', background: '#DCDCDC'}" 
+      class="board-tile new-board"
+      (click)="createBoard()">
+    </app-board-thumbnail>
   </li>
 </ul>

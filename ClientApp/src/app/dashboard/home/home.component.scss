@@ -1,0 +1,38 @@
+:host {
+    padding: 8px;
+}
+
+.board-tile {
+    width: 200px;
+    height: 100px;
+}
+
+.new-board {
+    background: rgb(243, 243, 243) !important;
+    font-size: 18px;
+    cursor: pointer;
+
+    ::ng-deep .content {
+        color: #353535;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+}

@@ -12,6 +12,10 @@ export class DataService {
     return this.http.get<Board>(`${this.baseUrl}api/boards/${id}`);
   }
 
+  createBoard(board: Partial<Board>): Observable<Board> {
+    return this.http.post<Board>(`${this.baseUrl}api/boards`, board);
+  }
+
   patchBoard(id: string, patch: BoardPatch): Observable<void> {
     return this.http.put<void>(`${this.baseUrl}api/boards/${id}`, patch);
   }

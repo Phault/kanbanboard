@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Create board</h1>
+<div mat-dialog-content class="content">
+  <mat-form-field>
+    <input matInput placeholder="Name" [(ngModel)]="data.name" cdkFocusInitial>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Background" [(ngModel)]="data.background">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="null">Cancel</button>
+  <button mat-button color="primary" [mat-dialog-close]="data">Create</button>
+</div>
